@@ -1,0 +1,131 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\renewcommand\lstlistingname{Algorithm}
+\renewcommand\lstlistlistingname{Algorithms}
+\def\lstlistingautorefname{Alg.}
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{BEE 4750}
+\newcommand\hwnumber{1}                  % <-- homework number
+\newcommand\NetIDa{Student Name}           % <-- Name of person #1
+%\newcommand\NetIDb{netid12038}           % <-- Name of person #2 (Comment this line out for problem sets)
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa}
+%\lhead{\NetIDb\\\NetIDb}                 % <-- Comment this line out for problem sets (make sure you are person #1)
+\chead{\textbf{\Large Homework \hwnumber}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+
+\section{Problem Description}
+%\section*{Problem Description} %use this version to have a section heading without numbering.
+
+Describe the problem here
+You can create bullets below to list things if you like. (enumerate is a numbered list, itemize is just bullets)
+\begin{enumerate}
+  \item
+   Problem 1 part 1 answer here.
+  \item
+    Problem 1 part 2 answer here.
+\end{enumerate}
+
+ These are a few examples that you are welcome to use to set up your formulations. Also there are lots of resources online. For example, I wanted to talk about the ampersand without having LaTeX interpret it as a command, so I googled "latex verbatim" and found an example to cut and paste, as well as the commands above that loaded the package I needed. (the one called verbatim and the line below defining the environment - see lines 14 and 15 in the source)
+
+\section{A simple layout} 
+
+$$\begin{align*}
+    & \max z = 3x_1 + 4x_2  \\
+    &\text{subject to} &&\\
+    & 3x_1 + 6x_2  &\leq& 27\\
+    & x_2 &\geq& 2\\
+    & 3x_1 + x_2 &\leq& 19 \\
+    & x_1, x_2 \geq 0 \quad \text{and integer}
+\end{align*}$$
+
+\section{ Alignment}
+You have to play with the
+\begin{verbatim} & character \end{verbatim} 
+to get the alignment how you want it. Here is another example:
+
+$$
+\begin{align}
+   &\max & Z = X_1 + X_2 \\
+   &\text{s.t.} &  5X_1 + 10X_2 \leq 40 \\
+   && 6X_1 + 3X_2 \leq 18\\
+   && X_1, X_2 \geq 0 
+\end{align}
+$$
+
+\section{Scalable brackets and braces}
+Note that in the code below, (see source) the use of
+\begin{verbatim}\left \left{ \end{verbatim} 
+tells latex to scale the bracket to the size of what's inside. I think you also have to end with the corresponding 
+\begin{verbatim}\right \right} \end{verbatim} 
+to avoid an error. 
+
+$$\min \left \{ \mathbb{E}\left[ \sum_{t=1}^T S_g(u_g^t - u_g^{t-1})  + c_t(\cdot) \right] \right \}$$
+
+
+\section{Case statements for choices}
+Below is an example of a "case" for writing if/then type of things. 
+
+
+$$C_j Y_j + B_j \sum_i W_{ij}$$
+$$ \[ Y_j = 
+\begin{cases}
+0 & \text{if} \quad \sum_i W_{ij} = 0 \\
+1 & \text{if} \quad \sum_i W_{ij} > 0 
+\end{cases}
+\] $$
+\section{Inserting Images}
+
+    Here is an example of how you can insert a figure.
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.3\linewidth]{BubbleImage.png}
+    \caption{Just a test image.}
+    \end{figure}
+
+From L. Sendelback to class on Slack (Fall 2018):
+\begin{verbatim}Inserting the image in LaTeX is easy if you add the command
+\includegraphics[width=\textwidth]{ImageNameHere}
+where you want the figure as long as you
+\usepackage{graphicx}
+at the very top of the document and you upload the image in Overleaf\end{verbatim}
+
+\end{document}
